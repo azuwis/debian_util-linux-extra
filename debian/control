@@ -29,8 +29,7 @@ Vcs-Git: git://git.debian.org/git/collab-maint/pkg-util-linux.git
 Package: util-linux-extra
 Architecture: any
 Section: utils
-Pre-Depends: ${misc:Pre-Depends}, ${shlibs:Depends}
-Depends: ${misc:Depends}
+Depends: ${misc:Depends}, ${misc:Pre-Depends}, ${shlibs:Depends}
 Suggests: dosfstools, kbd | console-tools, util-linux-locales
 Conflicts: util-linux (>= 2.21)
 Multi-Arch: foreign
