@@ -1,4 +1,4 @@
-Source: util-linux
+Source: util-linux-extra
 Build-Depends: autoconf,
                automake,
                autopoint,
@@ -26,7 +26,7 @@ Standards-Version: 3.9.5
 Vcs-Browser: https://anonscm.debian.org/gitweb/?p=collab-maint/pkg-util-linux.git
 Vcs-Git: git://git.debian.org/git/collab-maint/pkg-util-linux.git
 
-Package: util-linux
+Package: util-linux-extra
 Architecture: any
 Section: utils
 Pre-Depends: ${misc:Pre-Depends}, ${shlibs:Depends}
@@ -34,6 +34,7 @@ Depends: ${misc:Depends}
 Suggests: dosfstools, kbd | console-tools, util-linux-locales
 Replaces: bash-completion (<< 1:2.1-3)
 Breaks: bash-completion (<< 1:2.1-3)
+Conflicts: util-linux (>= 2.21)
 Multi-Arch: foreign
 Description: Miscellaneous system utilities
  This package contains a number of important utilities, most of which
