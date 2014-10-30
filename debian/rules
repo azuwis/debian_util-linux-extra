@@ -71,10 +71,6 @@ override_dh_auto_install:
 override_dh_installman:
 	dh_installman --language=C
 
-override_dh_installpam:
-	dh_installpam --package=util-linux --name=runuser
-	dh_installpam --package=util-linux --name=runuser-l
-
 override_dh_makeshlibs:
 	dh_makeshlibs -N libsmartcols1 -N libblkid1 -N libuuid1
 	dh_makeshlibs -plibsmartcols1 -V \
