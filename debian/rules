@@ -4,15 +4,11 @@ include /usr/share/dpkg/architecture.mk
 include /usr/share/dpkg/pkg-info.mk
 
 CONFOPTS = --with-slang
-CONFOPTS += --enable-line
 CONFOPTS += --libdir=/lib/$(DEB_HOST_MULTIARCH)
 CONFOPTS += --libexecdir=\$${prefix}/lib/$(DEB_HOST_MULTIARCH)
 
 ifeq ($(DEB_HOST_ARCH_OS),linux)
-CONFOPTS += --enable-raw
 CONFOPTS += --with-selinux
-CONFOPTS += --enable-partx
-CONFOPTS += --enable-tunelp
 endif
 
 CONFOPTS += --localstatedir=/run
@@ -36,6 +32,34 @@ CONFOPTS += --disable-kill
 CONFOPTS += --disable-eject
 # => passwd
 CONFOPTS += --disable-chfn-chsh
+
+# disable binaries in util-linux 0.20.1
+CONFOPTS += --disable-mount
+CONFOPTS += --disable-losetup
+CONFOPTS += --disable-fsck
+CONFOPTS += --disable-uuidd
+CONFOPTS += --disable-fallocate
+CONFOPTS += --disable-unshare
+CONFOPTS += --disable-setpriv
+CONFOPTS += --disable-agetty
+CONFOPTS += --disable-cramfs
+CONFOPTS += --disable-bfs
+CONFOPTS += --disable-minix
+CONFOPTS += --disable-fdformat
+CONFOPTS += --disable-hwclock
+CONFOPTS += --disable-switch_root
+CONFOPTS += --disable-pivot_root
+CONFOPTS += --disable-utmpdump
+CONFOPTS += --disable-raw
+CONFOPTS += --disable-rename
+CONFOPTS += --disable-nologin
+CONFOPTS += --disable-ul
+CONFOPTS += --disable-more
+CONFOPTS += --disable-pg
+CONFOPTS += --disable-setterm
+CONFOPTS += --disable-schedutils
+CONFOPTS += --disable-wall
+CONFOPTS += --disable-pylibmount
 
 ifeq ($(DEB_BUILD_GNU_TYPE),$(DEB_HOST_GNU_TYPE))
 	CROSS :=
