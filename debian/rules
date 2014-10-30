@@ -68,12 +68,6 @@ override_dh_auto_install:
 	# remove *.la files
 	rm -f debian/tmp/usr/lib/*/*.la
 
-override_dh_auto_clean:
-	dh_auto_clean
-	# drop arch-overrides, generated in dh_install by dh-exec usage.
-	rm -f debian/uuid-runtime.install.$(DEB_HOST_ARCH) \
-		debian/util-linux.install.$(DEB_HOST_ARCH)
-
 override_dh_install:
 	# generate arch-override, as dh-exec install-rename can only run once.
 	[ -f debian/util-linux.install.$(DEB_HOST_ARCH) ] || \
