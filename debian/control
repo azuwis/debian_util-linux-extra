@@ -29,7 +29,6 @@ Vcs-Git: git://git.debian.org/git/collab-maint/pkg-util-linux.git
 Package: util-linux
 Architecture: any
 Section: utils
-Essential: yes
 Pre-Depends: ${misc:Pre-Depends}, ${shlibs:Depends}
 Depends: ${misc:Depends}
 Suggests: dosfstools, kbd | console-tools, util-linux-locales
