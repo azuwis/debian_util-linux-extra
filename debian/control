@@ -16,7 +16,7 @@ Build-Depends: autoconf,
                po-debconf,
                zlib1g-dev
 Section: base
-Priority: required
+Priority: optional
 Maintainer: Debian util-linux Maintainers <ah-util-linux@debian.org>
 Uploaders: Scott James Remnant <scott@ubuntu.com>,
            LaMont Jones <lamont@debian.org>,
