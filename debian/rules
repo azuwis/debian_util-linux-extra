@@ -68,44 +68,6 @@ override_dh_auto_install:
 	# remove *.la files
 	rm -f debian/tmp/usr/lib/*/*.la
 
-override_dh_install:
-	# generate arch-override, as dh-exec install-rename can only run once.
-	[ -f debian/util-linux.install.$(DEB_HOST_ARCH) ] || \
-		debian/util-linux.install > \
-		debian/util-linux.install.$(DEB_HOST_ARCH)
-	[ -f debian/uuid-runtime.install.$(DEB_HOST_ARCH) ] || \
-		debian/uuid-runtime.install > \
-		debian/uuid-runtime.install.$(DEB_HOST_ARCH)
-	#
-	dh_install \
-		-Nfdisk-udeb -Ncfdisk-udeb -Nlibblkid1-udeb \
-		-Nlibsmartcols1-udeb -Nlibuuid1-udeb -Nutil-linux-udeb
-	dh_install --remaining-packages
-	#
-	# Install bash-completions only for binaries we ship
-	for PACKAGE in util-linux uuid-runtime bsdutils mount; do \
-	for BINARY in debian/$$PACKAGE/bin/* debian/$$PACKAGE/sbin/* \
-			debian/$$PACKAGE/usr/bin/* \
-			debian/$$PACKAGE/usr/sbin/* ; \
-	do \
-		BASENAME=$$(basename $$BINARY); \
-		BCDIR=usr/share/bash-completion/completions/; \
-		BCNAME=$$BCDIR/$$BASENAME ; \
-		if [ "$$BASENAME" != '*' ] && [ -e "debian/tmp/$$BCNAME" ]; \
-		then \
-			echo "$$PACKAGE: Installing $$BCNAME"; \
-			[ -d debian/$$PACKAGE/$$BCDIR ] || \
-				mkdir -p debian/$$PACKAGE/$$BCDIR; \
-			mv debian/tmp/$$BCNAME debian/$$PACKAGE/$$BCNAME; \
-		fi; \
-	done; \
-	done
-	# Removed these conflicting ones for now, see Bug#755986
-	rm -f debian/util-linux/usr/share/bash-completion/completions/dmesg
-	rm -f debian/bsdutils/usr/share/bash-completion/completions/renice
-	#
-	rm -rf debian/*-udeb/usr/share/doc
-
 override_dh_installman:
 	dh_installman --language=C
 
