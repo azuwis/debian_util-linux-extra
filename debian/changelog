@@ -1,3 +1,51 @@
+util-linux-extra (2.25.1-5+netease1) unstable; urgency=low
+
+  * Disable systemd
+  * debian/control: Drop dh-exec
+  * debian/: Remove bsdutils.*
+  * debian/: Remove *-udeb.install
+  * debian/: Remove libblkid*
+  * debian/: Remove mount.*
+  * debian/: Remove libuuid1.*
+  * debian/: Remove libmount*
+  * debian/: Remove uuid-*
+  * debian/: Remove *hwclock*
+  * debian/: Remove util-linux-locales.*
+  * debian/: Remove util-linux.docs
+  * debian/: Remove *.pam
+  * debian/: Remove fstab.example2
+  * debian/: Remove gbp.conf
+  * debian/: Remove util-linux.links
+  * debian/: Remove util-linux.examples
+  * debian/: Remove util-linux.mime
+  * debian/: Remove util-linux.NEWS
+  * debian/: Remove util-linux.{pre,post}*
+  * debian/: Remove util-linux.lintian-overrides
+  * debian/util-linux.install: Only install new commands.
+    From util-linux 0.20.1 to 0.25.1
+  * debian/util-linux.manpages: Only install manpages for new commands
+  * debian/control: Remove other binary packages
+  * debian/rules: Remove dh_auto_clean override
+  * debian/rules: Remove dh_install override
+  * debian/rules: Remove dh_gencontrol override
+  * debian/rules: Remove dh_installinit override
+  * debian/rules: Remove dh_installinit override
+  * debian/rules: Remove dh_makeshlibs override
+  * debian/rules: Remove dh_fixperms override
+  * debian/rules: Disable all disableable binaries
+  * debian/control: Simpler depends
+  * debian/control: Increase dpkg-deb version as lintian suggest
+  * debian/control: Change priority to optional
+  * debian/control: Remove essential option
+  * debian/control: Change source and package name, Add conflicts
+  * debian/: Rename util-linux.{install,manpages} to util-linux-extra
+  * debian/control: Remove bash-completion replaces/breaks
+  * debian/control: Turn pre-depends into depends for util-linux-extra binaries
+  * debian/util-linux-extra.install: Install bash completion modules
+  * debian/changelog: 2.25.1-5
+
+ -- Zhong Jianxin <azuwis@gmail.com>  Thu, 30 Oct 2014 23:02:12 +0800
+
 util-linux-extra (2.25.1-5) unstable; urgency=low
 
   * Change source package name to util-linux-extra
