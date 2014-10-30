@@ -5,3 +5,10 @@ debian/tmp/usr/bin/lslocks
 debian/tmp/usr/bin/nsenter
 debian/tmp/usr/bin/prlimit
 debian/tmp/usr/sbin/resizepart
+debian/tmp/usr/share/bash-completion/completions/chcpu
+debian/tmp/usr/share/bash-completion/completions/lslocks
+debian/tmp/usr/share/bash-completion/completions/nsenter
+debian/tmp/usr/share/bash-completion/completions/prlimit
+debian/tmp/usr/share/bash-completion/completions/resizepart
+debian/tmp/usr/share/bash-completion/completions/runuser
+debian/tmp/usr/share/bash-completion/completions/wdctl
